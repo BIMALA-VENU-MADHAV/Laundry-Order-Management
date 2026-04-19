@@ -22,7 +22,7 @@ if (!fs.existsSync(dataDir)) {
 const allowedOrigins = [
   'http://localhost:5173',
   'http://localhost:3000',
-  'https://laundry-order-system-frontend.vercel.app',
+  'https://drycleaning1.vercel.app/',
   'https://laundry-frontend.onrender.com',
   'http://localhost:5000'
 ];
