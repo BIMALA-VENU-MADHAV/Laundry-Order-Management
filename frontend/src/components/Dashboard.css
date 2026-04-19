@@ -1,0 +1,179 @@
+.dashboard-container {
+  display: grid;
+  gap: 2rem;
+}
+
+/* HEADER */
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.dashboard-header h2 {
+  font-size: 1.8rem;
+  color: var(--primary);
+}
+
+/* BUTTON */
+.refresh-btn {
+  padding: 0.6rem 1.2rem;
+  background: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+.refresh-btn:hover {
+  background: var(--primary-dark);
+}
+
+/* METRICS */
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+}
+
+.metric-card {
+  background: white;
+  padding: 1.8rem;
+  border-radius: 0.8rem;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  border-top: 4px solid;
+}
+
+.metric-card.primary {
+  border-color: #6366f1;
+}
+
+.metric-card.success {
+  border-color: #10b981;
+}
+
+.metric-label {
+  color: #6b7280;
+  margin-bottom: 0.5rem;
+}
+
+.metric-value {
+  font-size: 2.2rem;
+  font-weight: bold;
+}
+
+/* STATUS */
+.status-breakdown {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 1rem;
+  background: white;
+  padding: 1.5rem;
+  border-radius: 0.8rem;
+}
+
+.status-item {
+  padding: 1rem;
+  border-radius: 0.5rem;
+  text-align: center;
+  border: 2px solid;
+}
+
+.status-item.received {
+  background: #eff6ff;
+  border-color: #3b82f6;
+}
+
+.status-item.processing {
+  background: #fffbeb;
+  border-color: #f59e0b;
+}
+
+.status-item.ready {
+  background: #f0fdf4;
+  border-color: #10b981;
+}
+
+.status-item.delivered {
+  background: #f5f3ff;
+  border-color: #8b5cf6;
+}
+
+.status-item-label {
+  font-size: 0.9rem;
+}
+
+.status-item-value {
+  font-size: 1.6rem;
+  font-weight: bold;
+}
+
+/* TABLE */
+.recent-orders {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 0.8rem;
+}
+
+.recent-orders-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.recent-orders-table th,
+.recent-orders-table td {
+  padding: 0.8rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.recent-orders-table tr:hover {
+  background: #f9fafb;
+}
+
+/* BADGE */
+.status-badge {
+  padding: 0.3rem 0.7rem;
+  border-radius: 0.3rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.status-received {
+  background: #dbeafe;
+  color: #1e40af;
+}
+
+.status-processing {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.status-ready {
+  background: #d1fae5;
+  color: #065f46;
+}
+
+.status-delivered {
+  background: #ddd6fe;
+  color: #3730a3;
+}
+
+/* UTIL */
+.loading {
+  text-align: center;
+  padding: 2rem;
+}
+
+.error {
+  background: #fee2e2;
+  color: #ef4444;
+  padding: 1rem;
+  border-radius: 0.5rem;
+}
+
+.noDataText {
+  text-align: center;
+  padding: 1rem;
+  color: #9ca3af;
+}

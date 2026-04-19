@@ -1,0 +1,241 @@
+/* ================= ROOT THEME ================= */
+:root {
+  --primary: #6366f1;
+  --primary-dark: #4f46e5;
+
+  --success: #10b981;
+  --warning: #f59e0b;
+  --danger: #ef4444;
+
+  --text: #ffffff;
+  --text-h: #f6f6f8;
+
+  --bg: #f9fafb;
+  --card: #ffffff;
+  --border: #e5e7eb;
+
+  --accent: #aa3bff;
+
+  --shadow:
+    0 10px 15px -3px rgba(0, 0, 0, 0.05),
+    0 4px 6px -2px rgba(0, 0, 0, 0.03);
+
+  --radius: 0.75rem;
+
+  --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
+  --mono: ui-monospace, Consolas, monospace;
+
+  font-family: var(--sans);
+  font-size: 16px;
+  line-height: 1.6;
+
+  color: var(--text);
+  background: var(--bg);
+
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ================= DARK MODE ================= */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text: #010101;
+    --text-h: #000000;
+
+    --bg: #111827;
+    --card: #1f2937;
+    --border: #374151;
+
+    --shadow:
+      0 10px 15px -3px rgba(0, 0, 0, 0.4),
+      0 4px 6px -2px rgba(0, 0, 0, 0.3);
+  }
+}
+
+/* ================= RESET ================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ================= BODY ================= */
+body {
+  font-family: var(--sans);
+  background: var(--bg);
+  color: var(--text);
+}
+
+/* ================= ROOT APP ================= */
+#root {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* ================= HEADINGS ================= */
+h1, h2, h3 {
+  color: var(--text-h);
+  font-weight: 600;
+}
+
+h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+}
+
+h3 {
+  font-size: 1.1rem;
+}
+
+/* ================= TEXT ================= */
+p {
+  color: rgb(239, 243, 255);
+  line-height: 1.6;
+}
+
+/* ================= CARD ================= */
+.card {
+  background: var(--card);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 1.5rem;
+  border: 1px solid var(--border);
+}
+
+/* ================= BUTTON ================= */
+button {
+  font-family: inherit;
+}
+
+.btn {
+  background: var(--primary);
+  color: white;
+  border: none;
+  padding: 0.6rem 1rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.btn:hover {
+  background: var(--primary-dark);
+}
+
+.btn.secondary {
+  background: #e5e7eb;
+  color: var(--text-h);
+}
+
+.btn.secondary:hover {
+  background: #d1d5db;
+}
+
+/* ================= INPUT ================= */
+input, select {
+  font-family: inherit;
+  border: 1px solid var(--border);
+  border-radius: 0.5rem;
+  padding: 0.6rem;
+  background: white;
+  transition: 0.2s;
+}
+
+input:focus, select:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(99,102,241,0.1);
+}
+
+/* ================= TABLE ================= */
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th {
+  text-align: left;
+  font-weight: 600;
+  color: var(--text-h);
+}
+
+td, th {
+  padding: 0.8rem;
+  border-bottom: 1px solid var(--border);
+}
+
+/* ================= STATUS BADGE ================= */
+.status-badge {
+  padding: 0.3rem 0.6rem;
+  border-radius: 0.4rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.status-received {
+  background: #dbeafe;
+  color: #1e40af;
+}
+
+.status-processing {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.status-ready {
+  background: #d1fae5;
+  color: #065f46;
+}
+
+.status-delivered {
+  background: #ddd6fe;
+  color: #3730a3;
+}
+
+/* ================= UTIL ================= */
+.loading {
+  text-align: center;
+  padding: 2rem;
+  color: var(--primary);
+}
+
+.error {
+  background: #fee2e2;
+  color: var(--danger);
+  padding: 1rem;
+  border-radius: 0.5rem;
+}
+
+.no-data {
+  text-align: center;
+  padding: 2rem;
+  color: var(--text);
+}
+
+/* ================= SCROLL ================= */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #d1d5db;
+  border-radius: 10px;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 1.6rem;
+  }
+
+  h2 {
+    font-size: 1.3rem;
+  }
+
+  #root {
+    padding: 0 0.5rem;
+  }
+}

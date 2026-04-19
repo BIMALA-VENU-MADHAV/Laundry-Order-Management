@@ -1,0 +1,34 @@
+# Render.yaml - Infrastructure as Code for Render deployment
+# For more info: https://docs.render.com/render.yaml
+
+services:
+  - type: web
+    name: laundry-api
+    runtime: node
+    plan: free
+    buildCommand: npm install
+    startCommand: node server.js
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 5000
+    disk:
+      name: order-data
+      mountPath: /app/data
+      sizeGB: 1
+
+  - type: static
+    name: laundry-frontend
+    buildCommand: npm install && npm run build
+    staticPublishPath: dist
+    envVars:
+      - key: VITE_API_URL
+        value: https://laundry-api.onrender.com/api
+
+# Databases (optional - add if needed)
+# databases:
+#   - name: laundry-db
+#     databaseName: laundry_orders
+#     user: laundry_user
+#     plan: free

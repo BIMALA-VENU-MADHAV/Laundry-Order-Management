@@ -1,0 +1,221 @@
+{
+  "info": {
+    "_postman_id": "laundry-order-system",
+    "name": "Laundry Order Management API",
+    "description": "Complete API for dry cleaning order management",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Pricing",
+      "item": [
+        {
+          "name": "Get Pricing",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:5000/api/pricing",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "5000",
+              "path": ["api", "pricing"]
+            },
+            "description": "Fetch all garment types and their prices"
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Orders",
+      "item": [
+        {
+          "name": "Create Order",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"customerName\": \"Rajesh Kumar\",\n  \"phoneNumber\": \"9876543210\",\n  \"garments\": [\n    {\n      \"name\": \"Shirt\",\n      \"quantity\": 2,\n      \"pricePerItem\": 100\n    },\n    {\n      \"name\": \"Pants\",\n      \"quantity\": 1,\n      \"pricePerItem\": 150\n    },\n    {\n      \"name\": \"Saree\",\n      \"quantity\": 1,\n      \"pricePerItem\": 200\n    }\n  ]\n}"
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/orders",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "5000",
+              "path": ["api", "orders"]
+            },
+            "description": "Create a new order with customer details and garments"
+          },
+          "response": []
+        },
+        {
+          "name": "Get All Orders",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:5000/api/orders",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "5000",
+              "path": ["api", "orders"]
+            },
+            "description": "Retrieve all orders"
+          },
+          "response": []
+        },
+        {
+          "name": "Get Orders - Filter by Status",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:5000/api/orders?status=READY",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "5000",
+              "path": ["api", "orders"],
+              "query": [
+                {
+                  "key": "status",
+                  "value": "READY"
+                }
+              ]
+            },
+            "description": "Filter orders by status (RECEIVED, PROCESSING, READY, DELIVERED)"
+          },
+          "response": []
+        },
+        {
+          "name": "Get Orders - Filter by Customer Name",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:5000/api/orders?customerName=Raj",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "5000",
+              "path": ["api", "orders"],
+              "query": [
+                {
+                  "key": "customerName",
+                  "value": "Raj"
+                }
+              ]
+            },
+            "description": "Filter orders by customer name (partial match, case-insensitive)"
+          },
+          "response": []
+        },
+        {
+          "name": "Get Orders - Filter by Phone",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:5000/api/orders?phoneNumber=9876543210",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "5000",
+              "path": ["api", "orders"],
+              "query": [
+                {
+                  "key": "phoneNumber",
+                  "value": "9876543210"
+                }
+              ]
+            },
+            "description": "Filter orders by exact phone number"
+          },
+          "response": []
+        },
+        {
+          "name": "Get Single Order",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:5000/api/orders/550e8400-e29b-41d4-a716-446655440000",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "5000",
+              "path": ["api", "orders", "550e8400-e29b-41d4-a716-446655440000"]
+            },
+            "description": "Get details of a specific order by ID"
+          },
+          "response": []
+        },
+        {
+          "name": "Update Order Status",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"status\": \"PROCESSING\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/orders/550e8400-e29b-41d4-a716-446655440000/status",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "5000",
+              "path": ["api", "orders", "550e8400-e29b-41d4-a716-446655440000", "status"]
+            },
+            "description": "Update order status. Valid statuses: RECEIVED, PROCESSING, READY, DELIVERED"
+          },
+          "response": []
+        },
+        {
+          "name": "Delete Order",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:5000/api/orders/550e8400-e29b-41d4-a716-446655440000",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "5000",
+              "path": ["api", "orders", "550e8400-e29b-41d4-a716-446655440000"]
+            },
+            "description": "Delete an order by ID"
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Dashboard",
+      "item": [
+        {
+          "name": "Get Dashboard Metrics",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:5000/api/dashboard",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "5000",
+              "path": ["api", "dashboard"]
+            },
+            "description": "Get dashboard metrics including total orders, revenue, status breakdown, and recent orders"
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}

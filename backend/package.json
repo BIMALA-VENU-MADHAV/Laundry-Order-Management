@@ -1,0 +1,30 @@
+{
+  "name": "dry-cleaning-backend",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Laundry Order Management System - Backend API",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js",
+    "test": "echo \"Add tests here\""
+  },
+  "keywords": [
+    "laundry",
+    "order-management",
+    "express",
+    "rest-api"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2",
+    "cors": "^2.8.5",
+    "uuid": "^9.0.0"
+  },
+  "devDependencies": {},
+  "engines": {
+    "node": ">=16.0.0",
+    "npm": ">=8.0.0"
+  }
+}

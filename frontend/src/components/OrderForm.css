@@ -1,0 +1,231 @@
+.order-form-container {
+  background: #ffffff;
+  border-radius: 1rem;
+  padding: 2rem;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  max-width: 650px;
+  margin: 0 auto;
+  border: 1px solid var(--border-color);
+}
+
+/* TITLE */
+.order-form-container h2 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--dark-color);
+  margin-bottom: 1.5rem;
+}
+
+/* FORM */
+.order-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* INPUT GROUP */
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--muted);
+  margin-bottom: 0.4rem;
+}
+
+.form-group input,
+.form-group select {
+  padding: 0.75rem;
+  border-radius: 0.6rem;
+  border: 1px solid var(--border-color);
+  font-size: 0.95rem;
+  transition: 0.2s;
+  background: #f9fafb;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: var(--primary);
+  background: #fff;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+}
+
+/* GARMENT SECTION */
+.garment-selector h3 {
+  font-size: 1rem;
+  margin-bottom: 0.75rem;
+  color: var(--dark-color);
+}
+
+/* CATEGORY BUTTONS */
+.category-buttons {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+
+.category-btn {
+  padding: 0.5rem 1rem;
+  border-radius: 999px;
+  border: 1px solid var(--border-color);
+  background: #f3f4f6;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.category-btn:hover {
+  background: #e5e7eb;
+}
+
+.category-btn.active {
+  background: var(--primary);
+  color: white;
+  border-color: var(--primary);
+  box-shadow: 0 4px 10px rgba(99, 102, 241, 0.3);
+}
+
+/* GARMENT INPUT */
+.garment-input-group {
+  display: grid;
+  grid-template-columns: 1fr 90px 80px;
+  gap: 0.6rem;
+}
+
+.garment-input-group select,
+.garment-input-group input {
+  padding: 0.6rem;
+  border-radius: 0.5rem;
+  border: 1px solid var(--border-color);
+}
+
+/* ADD BUTTON */
+.add-btn {
+  background: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.add-btn:hover {
+  background: var(--primary-dark);
+}
+
+/* GARMENTS LIST */
+.garments-list {
+  background: #f9fafb;
+  padding: 1.2rem;
+  border-radius: 0.75rem;
+  border: 1px solid var(--border-color);
+}
+
+.garments-list h3 {
+  margin-bottom: 0.8rem;
+  font-size: 1rem;
+}
+
+/* ITEM */
+.garment-item {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  align-items: center;
+  gap: 0.5rem;
+  background: white;
+  padding: 0.6rem 0.8rem;
+  border-radius: 0.5rem;
+  border: 1px solid var(--border-color);
+  margin-bottom: 0.5rem;
+  transition: 0.2s;
+}
+
+.garment-item:hover {
+  background: #f3f4f6;
+}
+
+/* REMOVE */
+.remove-btn {
+  background: #ef4444;
+  color: white;
+  border: none;
+  padding: 0.3rem 0.6rem;
+  border-radius: 0.4rem;
+  cursor: pointer;
+  font-size: 0.8rem;
+}
+
+.remove-btn:hover {
+  background: #dc2626;
+}
+
+/* TOTAL */
+.total-bill {
+  margin-top: 1rem;
+  text-align: right;
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: var(--primary);
+}
+
+/* MESSAGE */
+.message {
+  padding: 0.8rem;
+  border-radius: 0.5rem;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.message.success {
+  background: #d1fae5;
+  color: #065f46;
+}
+
+.message.error {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+/* SUBMIT */
+.submit-btn {
+  padding: 0.9rem;
+  background: #10b981;
+  color: white;
+  border: none;
+  border-radius: 0.6rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.submit-btn:hover {
+  background: #059669;
+}
+
+.submit-btn:disabled {
+  background: #d1d5db;
+  cursor: not-allowed;
+}
+
+/* MOBILE */
+@media (max-width: 640px) {
+  .order-form-container {
+    padding: 1rem;
+  }
+
+  .garment-input-group {
+    grid-template-columns: 1fr;
+  }
+
+  .garment-item {
+    grid-template-columns: 1fr;
+    text-align: left;
+  }
+}
